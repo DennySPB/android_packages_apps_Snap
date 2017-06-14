@@ -1788,7 +1788,8 @@ public class VideoModule extends BaseModule<VideoUI> implements
         if ((isHFR || isHSR) && captureRate > 0) {
             if (isHSR) {
                 Log.i(TAG, "Enabling audio for HSR");
-                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
+//                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
+                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
             }
             mMediaRecorder.setOutputFormat(mProfile.fileFormat);
             mMediaRecorder.setVideoFrameRate(mProfile.videoFrameRate);
@@ -1804,7 +1805,8 @@ public class VideoModule extends BaseModule<VideoUI> implements
             }
         } else {
             if (!mCaptureTimeLapse) {
-                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
+//                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
+                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
             }
 
             mMediaRecorder.setProfile(mProfile);
